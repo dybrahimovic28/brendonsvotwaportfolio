@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { Phone } from 'lucide-react';
 
 const WhatsAppIcon = () => (
@@ -31,7 +31,7 @@ const FloatingContact = () => {
   const whatsappUrl = "https://wa.me/260973439282";
   const phoneUrl = "tel:+260779934886";
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -50,7 +50,7 @@ const FloatingContact = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15, scale: 0.9 },
     show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 400, damping: 25 } },
     exit: { opacity: 0, y: 10, scale: 0.9, transition: { duration: 0.15 } }
